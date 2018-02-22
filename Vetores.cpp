@@ -95,6 +95,7 @@ int maiorValor(int v[], int n){
 	}
 	return maiorvalor;
 }
+
 // 5 - Retornar a quantidade de elementos do vetor que são menores que um dado valor
 
 int qtdeElemMenores(int v[], int n, int elem){
@@ -106,7 +107,9 @@ int qtdeElemMenores(int v[], int n, int elem){
 	}
 	return qtd;
 }
+
 // 6 - Comparar se dois vetores são iguais
+
 int compararVetores(int v[], int w[], int n){
 	int qtd = 0;
 	for (int k = 0; k<n; k++){
