@@ -8,13 +8,14 @@
 
 using namespace std;
 
-// Declaração das funções 
+// DeclaraÃ§Ã£o das funÃ§Ãµes 
 
 void imprimeMatriz(int [][COLS], int);
 int preencheAleatorio(int [][COLS], int);
 int somaMatriz(int [][COLS], int);
+int somaPares(int v[][COLS], int n);
 
-// Implementação das funções
+// ImplementaÃ§Ã£o das funÃ§Ãµes
 // Preenchendo n linhas da matriz
 
 int preencheAleatorio(int v[][COLS], int n){
@@ -51,18 +52,32 @@ int somaMatriz(int v[][COLS], int n){
 	return total;
 }
 
-// Exercícios: Complete este código com funções para:
+// ExercÃ­cios: Complete este cÃ³digo com funÃ§Ãµes para:
 // 1 - Somar os valores pares de uma matriz
+
+int somaPares(int v[][COLS], int n){
+	int k, totalPares=0;
+	for (k=0; k<n; k++){
+		for (int c=0; c<COLS; c++){
+			if (v[k][c]%2==0){
+				totalPares += v[k][c];
+			}
+		}
+	}
+	return totalPares;
+}
 // 2 - Buscar um dado elemento em uma matriz
-// 3 - Retornar a quantidade de ocorrências de um dado elemento numa matriz
-// 4 - Retornar o valor do maior elemento de uma matriz não vazia
-// 5 - Retornar a quantidade de elementos da matriz que são menores que um dado valor
-// 6 - Comparar se duas matrizes são iguais
+
+
+// 3 - Retornar a quantidade de ocorrÃªncias de um dado elemento numa matriz
+// 4 - Retornar o valor do maior elemento de uma matriz nÃ£o vazia
+// 5 - Retornar a quantidade de elementos da matriz que sÃ£o menores que um dado valor
+// 6 - Comparar se duas matrizes sÃ£o iguais
 // 7 - Somar os valores de uma dada linha da matriz
 // 8 - Somar os valores de uma dada coluna da matriz
 // 9 - Verificar se um dado vetorocorre em alguma linha da matriz
 
-// Função main
+// FunÃ§Ã£o main
 
 int main(){
 	int v[TAM_MAX][COLS];
@@ -73,6 +88,7 @@ int main(){
 	imprimeMatriz(v, qtdLin);
 	
 	cout << "a soma dos elementos da matriz e: " << somaMatriz(v, qtdLin) << endl;
+	cout << "a soma dos elementos pares da matriz e: " << somaPares(v, qtdLin) << endl;
 	
 	system("PAUSE");
 	return 0;
