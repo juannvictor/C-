@@ -14,6 +14,7 @@ void imprimeMatriz(int [][COLS], int);
 int preencheAleatorio(int [][COLS], int);
 int somaMatriz(int [][COLS], int);
 int somaPares(int v[][COLS], int n);
+int buscaElem(int v[][COLS], int n, int elem);
 
 // Implementação das funções
 // Preenchendo n linhas da matriz
@@ -68,8 +69,20 @@ int somaPares(int v[][COLS], int n){
 }
 // 2 - Buscar um dado elemento em uma matriz
 
+int buscaElem(int v[][COLS], int n, int elem){
+	for (int k=0; k<n; k++){
+		for (int c=0; c<COLS; c++){
+			if (v[k][c] == elem){
+				return v[k][c];
+			}
+		}
+	}
+	return -1;
+}
 
 // 3 - Retornar a quantidade de ocorrências de um dado elemento numa matriz
+
+
 // 4 - Retornar o valor do maior elemento de uma matriz não vazia
 // 5 - Retornar a quantidade de elementos da matriz que são menores que um dado valor
 // 6 - Comparar se duas matrizes são iguais
@@ -82,13 +95,23 @@ int somaPares(int v[][COLS], int n){
 int main(){
 	int v[TAM_MAX][COLS];
 	int qtdLin = 0;
+	int num;
+	int indice;
 	
 	imprimeMatriz(v, qtdLin);
 	qtdLin = preencheAleatorio(v,5);
 	imprimeMatriz(v, qtdLin);
 	
 	cout << "a soma dos elementos da matriz e: " << somaMatriz(v, qtdLin) << endl;
-	cout << "a soma dos elementos pares da matriz e: " << somaPares(v, qtdLin) << endl;
+	cout << "a soma dos elementos pares da matriz e: " << somaPares(v, qtdLin) << endl << endl;
+	
+	cout << "Digite um numero a ser buscado na matriz: ";
+	cin  >> num;
+	
+	indice = buscaElem(v, qtdLin, num);
+	if (indice >= 0){
+		cout << num << " ocorre na posicao " << indice << endl;
+	}
 	
 	system("PAUSE");
 	return 0;
