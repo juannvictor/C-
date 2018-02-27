@@ -19,6 +19,8 @@ int ocorrenciaElem(int v[][COLS], int n, int elem);
 int maiorElemMatriz(int v[][COLS], int n);
 int retornarQuantMenor(int v[][COLS], int n, int elem);
 int compararMatrizes(int v[][COLS], int w[][COLS], int n);
+int somaValorLinha(int v[][COLS], int n, int elem);
+int somaValorColuna(int v[][COLS], int n, int elem);
 
 // Implementação das funções
 // Preenchendo n linhas da matriz
@@ -136,13 +138,33 @@ int compararMatrizes(int v[][COLS], int w[][COLS], int n){
 			else{
 				return -1;
 			}
+			return qtd;
 		}
+	}
+}
+// 7 - Somar os valores de uma dada linha da matriz
+
+int somaValorLinha(int v[][COLS], int n, int elem){
+	int qtd = 0;
+	for (int k=0; k<n; k++){
+		for (int c=0; c<COLS; c++){
+			qtd += v[elem][c];
+		}
+		return qtd;
+	}
+}
+
+// 8 - Somar os valores de uma dada coluna da matriz
+
+int somaValorColuna(int v[][COLS], int n, int elem){
+	int qtd = 0;
+	for (int k=0; k<n; k++){
+		qtd += v[k][elem];
 	}
 	return qtd;
 }
-// 7 - Somar os valores de uma dada linha da matriz
-// 8 - Somar os valores de uma dada coluna da matriz
-// 9 - Verificar se um dado vetorocorre em alguma linha da matriz
+
+// 9 - Verificar se um dado vetor ocorre em alguma linha da matriz
 
 // Função main
 
@@ -156,6 +178,10 @@ int main(){
 	int maiorValor;
 	int menores;
 	int compararMatriz;
+	int numLin;
+	int somaLinha;
+	int numCol;
+	int somaColuna;
 	
 	imprimeMatriz(v, qtdLin);
 	qtdLin = preencheAleatorio(v,5);
@@ -181,16 +207,29 @@ int main(){
 	
 	qtdLin = preencheAleatorio(v,5);
 	imprimeMatriz(v, qtdLin);
-	qtdLin = preencheAleatorio(v,5);
-	imprimeMatriz(v, qtdLin);
+	qtdLin = preencheAleatorio(w,5);
+	imprimeMatriz(w, qtdLin);
 	
 	compararMatriz = compararMatrizes(v, w, qtdLin);
 	if (compararMatriz >= 0){
-		cout << "As matrizes sao iguais." << endl;
+		cout << "As matrizes sao iguais." << endl << endl;
 	}
 	else{
-		cout << "As matrizes nao sao iguais." << endl;
+		cout << "As matrizes nao sao iguais." << endl << endl;
 	}
+	
+	cout << "Digite uma linha a ser somada na matriz: ";
+	cin  >> numLin;
+	
+	somaLinha = somaValorLinha(v, qtdLin, numLin);
+	cout << somaLinha << " e o valor da soma dos elementos da linha " << numLin << " da matriz." << endl << endl;
+	
+	cout << "Digite uma coluna a ser somada na matriz: ";
+	cin  >> numCol;
+	
+	somaColuna = somaValorColuna(v, qtdLin, numCol);
+	cout << somaColuna << " e o valor da soma dos elementos da coluna " << numCol << " da matriz." << endl << endl;
+	
 	
 	system("PAUSE");
 	return 0;
