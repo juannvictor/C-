@@ -5,8 +5,8 @@
 
 using namespace std;
 
-// Implementação dos metodos do vetor
-// ou implementação das funções membro do vetor
+// ImplementaÃ§Ã£o dos metodos do vetor
+// ou implementaÃ§Ã£o das funÃ§Ãµes membro do vetor
 
 Vetor::Vetor(){
 	qtdVet = 0;
