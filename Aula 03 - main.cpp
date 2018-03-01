@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Função main
+// FunÃ§Ã£o main
 
 int main(){
 	
