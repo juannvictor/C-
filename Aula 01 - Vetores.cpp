@@ -7,7 +7,7 @@
 
 using namespace std;
 
-// Declarando as funções
+// Declarando as funÃ§Ãµes
 
 void imprimeVetor(int[], int);
 int preencheAleatorio(int[], int);
@@ -19,7 +19,7 @@ int maiorValor(int v[], int n);
 int qtdeElemMenores(int v[], int n, int elem);
 int compararVetores(int v[], int w[], int n);
 
-// Implementação das funções
+// ImplementaÃ§Ã£o das funÃ§Ãµes
 
 int preencheAleatorio(int v[], int n){
 	int k = 0;
@@ -48,7 +48,7 @@ int somaVetor(int v[], int n){
 	return total;
 }
 
-// Exercícios: Complete esse código com funções para:
+// ExercÃ­cios: Complete esse cÃ³digo com funÃ§Ãµes para:
 //  1 - Somar os valores pares de um vetor
 
 int somaParesVetor(int v[], int n){
@@ -72,7 +72,7 @@ int buscaElemVetor(int v[], int n, int elem){
 	return -1;
 }
 
-// 3 - Retornar a quantidade de ocorrências de um dado elemento em um vetor
+// 3 - Retornar a quantidade de ocorrÃªncias de um dado elemento em um vetor
 
 int contaOcorrenciasElemVetor(int v[], int n, int elem){
 	int qtd = 0;
@@ -84,7 +84,7 @@ int contaOcorrenciasElemVetor(int v[], int n, int elem){
 	return qtd;
 }
 
-// 4 - Retornar o valor do maior elemento de um vetor não vazio
+// 4 - Retornar o valor do maior elemento de um vetor nÃ£o vazio
 
 int maiorValor(int v[], int n){
 	int k, maiorvalor = 0;
@@ -95,7 +95,7 @@ int maiorValor(int v[], int n){
 	}
 	return maiorvalor;
 }
-// 5 - Retornar a quantidade de elementos do vetor que são menores que um dado valor
+// 5 - Retornar a quantidade de elementos do vetor que sÃ£o menores que um dado valor
 
 int qtdeElemMenores(int v[], int n, int elem){
 	int qtd = 0;
@@ -106,7 +106,7 @@ int qtdeElemMenores(int v[], int n, int elem){
 	}
 	return qtd;
 }
-// 6 - Comparar se dois vetores são iguais
+// 6 - Comparar se dois vetores sÃ£o iguais
 int compararVetores(int v[], int w[], int n){
 	int qtd = 0;
 	for (int k = 0; k<n; k++){
@@ -120,7 +120,7 @@ int compararVetores(int v[], int w[], int n){
 	}
 }
 
-//  Função main
+//  FunÃ§Ã£o main
 
 int main(){
 	int v[TAM_MAX];
