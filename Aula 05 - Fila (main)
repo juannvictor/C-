@@ -1,0 +1,47 @@
+#include <cstdlib>
+#include <iostream>
+#include "Fila.h"
+
+using namespace std;
+
+// ----------------- Funcao main
+int main(){
+	Fila f;
+	int numLido;
+	
+	if (f.eVazia())
+		cout << "A fila esta vazia\n";
+	else
+		cout << "A fila nao esta vazia\n"
+	
+	
+	while (true){
+		cout << "0 - sair\n";
+		cout << "1 - incluir um item na fila\n";
+		cout << "2 - atender um item da fila\n";
+		cout << "3 - consultar o numero de itens da fila\n";
+		cout << "4 - esvaziar a fila\n";
+		cin  >> numLido;
+		
+		if (numLido == 0)
+			break;
+		else if (numLido == 1){
+			cout << "Digite um numero para ser enfileirado: ";
+			cin  >> numero;
+			if (f.enfileira(numero)){
+				cout << "Numero enfileirado.\n";
+			}
+			else{
+				cout << "Fila cheia.\n";
+			}
+		}
+		else if (numLido == 2){
+			int aux;
+			f.
+		}
+		
+	}
+	
+	system("PAUSE");
+	return 0;
+}
