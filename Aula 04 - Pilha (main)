@@ -1,0 +1,70 @@
+
+#include <cstdlib>
+#include <iostream>
+#include "Pilha.h"
+
+using namespace std;
+
+// ----------------- Funcao main
+int main(){
+    Pilha s;
+    int numLido;
+    int numero;
+
+    /*
+    if (s.eVazia())
+        cout << "Pilha esta vazia\n";
+    else
+        cout << "Pilha nao esta vazia\n";
+
+    */
+
+    while (true){
+        cout << "0 - sair\n";
+        cout << "1 - empilhar um elemento\n";
+        cout << "2 - desempilhar um elemento\n";
+        cout << "3 - consultar capacidade da pilha\n";
+        cout << "4 - consultar o elemento do topo sem desempilha-lo\n";
+        cout << "5 - esvaziar a pilha e imprimir os elementos\n";
+        cin >> numLido;
+        if (numLido == 0)
+            break;
+        else if (numLido == 1){
+            cout << "Digite um numero para ser empilhado\n";
+            cin >> numero;
+            if (s.empilha(numero)){
+                cout << "Numero empilhado\n";
+            }else
+                cout << "Pilha cheia\n";
+            }
+        else if (numLido == 2){
+            int aux;
+            s.desempilha(aux);
+            cout << "Elemento de cima desempilhado com sucesso\n";
+        }
+        else if (numLido == 3){
+        		cout << "Capacidade total da pilha " << TAM << "\n";
+                cout << "Vagas disponiveis: " << s.vagas_disponiveis() << "\n";
+        }
+        else if (numLido == 4){
+        	cout << "Elemento do topo: " << s.consulta() << "\n";
+		}
+		else if (numLido == 5){
+			cout << "Elementos da pilha: ";
+			while (!s.eVazia()){
+            int aux;
+            s.desempilha(aux);
+            cout << aux << " ";
+        }
+        cout << "\n";
+		}
+    }
+
+        
+
+
+
+
+    system("PAUSE");
+    return 0;
+}
