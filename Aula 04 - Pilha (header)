@@ -1,0 +1,30 @@
+/*
+  T.A.D. para PILHA:
+  * Atributos:
+    - vetor de elementos
+    - indice do topo
+  * Operacoes
+    - desepilhar um elemento
+    - empilhar um elemento
+    - consultar qtd. de elementos empilhados
+    - consultar caacidade total de armazenamento
+    - consultar se esta´ vazia
+    - consultar se esta´ cheia
+    - inicializar como vazia
+    - consultar elemento do topo, sem desemilhá-lo
+*/
+
+#define TAM 4
+
+class Pilha{
+private:
+    int itens[TAM];
+    int topo;
+public:
+    Pilha();
+    bool eVazia();
+    bool empilha(int);
+    bool desempilha(int &);
+    int vagas_disponiveis();
+    int consulta();
+};
