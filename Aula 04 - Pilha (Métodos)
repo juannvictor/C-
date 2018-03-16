@@ -1,0 +1,38 @@
+#include "Pilha.h"
+
+// ------ IMPLEMENTACAO dos MÉTODOS de Pilha
+//     ou IMPLEMENTACAo das FUNCOES-MEMBRO de Pilha
+
+Pilha::Pilha(){
+    topo = 0;
+}
+
+bool Pilha::eVazia(){
+    return (topo == 0);
+}
+
+bool Pilha::empilha(int elem){
+    if (topo == TAM)
+        return false;
+    itens[topo]= elem;
+    topo++;
+    return true;
+}
+
+bool Pilha::desempilha(int & elem){
+    if (eVazia())
+        return false;
+    topo--;
+    elem= itens[topo];
+    return true;
+}
+
+int Pilha::vagas_disponiveis(){
+    return TAM-topo;
+}
+
+int Pilha::consulta(){
+	if (eVazia())
+        return false;
+    return itens[topo-1];
+}
