@@ -1,0 +1,16 @@
+
+#define TAM 4
+
+class Fila{
+private:
+    int itens[TAM];
+    int fim; 
+public:
+    Fila();
+    bool eVazia();
+    bool enfileira(int);
+    bool desenfileira(int &);
+    bool atender(int);
+    int atender(int);
+    int consulta();
+};
