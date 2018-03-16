@@ -1,0 +1,46 @@
+#include "Fila.h"
+
+// ------ IMPLEMENTACAO dos MÉTODOS de Fila
+//     ou IMPLEMENTACAo das FUNCOES-MEMBRO de Fila
+
+Fila::Fila(){
+	fim = 0;
+}
+
+bool Fila::eVazia(){
+	return (fim == 0);
+}
+
+bool Fila::enfileira(int elem){
+	if (fim == TAM)
+		return false;
+	itens[fim]= elem;
+	fim++;
+	return true;
+}
+
+bool Fila::desenfileira(int & elem){
+	if (eVazia())
+		return false;
+	elem = itens[0];
+	for(int k=0; k<fim-1; k++)
+		itens[k] = itens[k+1]
+	fim--;
+	return true;
+}
+
+int Fila::atender(int elem){
+	if (eVazia())
+		return false;
+	for (k=0; k<fim-1; k++){
+		if (itens[k] == elem)
+			return elem;
+		return false;
+	}
+}
+
+int Fila::consulta(){
+	if (eVazia())
+		return false;
+	return itens[fim-1];
+}
