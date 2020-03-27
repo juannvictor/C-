@@ -1,0 +1,36 @@
+#ifndef ARVORE_NODE_H
+#define ARVORE_NODE_H
+
+template <typename T>
+class Arvore;
+
+template <typename T>
+class ArvoreNode
+{
+  friend class Arvore<T>;
+
+public:
+    ArvoreNode(T);
+    T getData(); //retorna o dado armazenado no nó
+    
+private:
+    T data;
+    ArvoreNode* pointEsq; //ponteiro para o filho da esquerda
+    ArvoreNode* pointDir; //ponteiro para o filho da direita
+};
+
+template <typename T>
+ArvoreNode<T>::ArvoreNode(T dataIn)
+{
+  data = dataIn;
+  pointEsq = 0; //filhos da esq/dir inicializados como NULL
+  pointDir = 0;
+}
+
+template <typename T>
+T ArvoreNode<T>::getData()
+{
+  return data;
+}
+
+#endif
