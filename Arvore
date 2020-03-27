@@ -1,0 +1,145 @@
+#include <iostream>
+#include <ctime>
+#include <Lista.h>
+#include <ListaNode.h>
+#include <Arvore.h>
+#include <ArvoreNode.h>
+
+using namespace std;
+
+int main()
+{
+  int escolha = 0;
+
+  //função que cria uma array de 10 numeros aleatorios
+  const int tam = 10;
+  int arr[tam];
+  srand(time(0));
+  for(int i=0; i<= tam-1; i++)
+  {
+    arr[i] = rand() % 101;
+  }
+
+  Lista<int> intLista; //cria a lista ligada
+  for(int i=0; i <= tam-1; i++)
+  {
+    intLista.inserirNovoNode(arr[i]); //insere valores da array na lista ligada
+  }
+  
+  Arvore<int> intArvore; //cria a arvore
+  for(int i=0; i<=tam-1; i++)
+  {
+    intArvore.inserirNovoNode(arr[i]); //insere os valores da array na arvore
+  }
+
+  while(escolha != 7)
+  {
+    cout << "Valores iniciais da lista" << endl;
+    cout << "-------------------------" << endl;
+    for(int i=0; i<= tam-1; i++)
+    {
+      cout << arr[i] << ' ';
+    }
+    cout << endl << endl;
+
+    //Menu principal da função main
+    cout << "Lista Ligada e Arvore Generica" << endl;
+    cout << "------------------------------" << endl;
+    cout << "1 - Printa a lista ligada" << endl;
+    cout << "2 - Procura um elemento na lista" << endl;
+    cout << "3 - Printa a Arvore em Pre-Ordem" << endl;
+    cout << "4 - Printa a Arvore em ordem crescente" << endl;
+    cout << "5 - Printa a Arvore em Pos-Odem" << endl;
+    cout << "6 - Procura por um elemento na arvore" << endl;
+    cout << "7 - Calcular o tamanho de um ponto" << endl;
+    cout << "8 - Sair do programa" << endl;
+    cout << "Entre com um número: ";
+    cin >> escolha;
+    system("cls");
+
+    int chave;
+
+    ListaNode<int>* posLista;
+    ArvoreNode<int>* posArvore;
+
+    switch(escolha)
+    {
+      case 1:
+            cout << "Lista Ligada de elementos Aleatórios" << endl;
+            cout << "------------------------------------" << endl;
+            intLista.print();
+            system("pause");
+            system("cls");
+            break;
+      case 2:
+            cout << "Procurando um elemento na Lista" << endl;
+            cout << "-------------------------------" << endl;
+            cout << "Entre com um número para consulta: ";
+            cin >> chave;
+            posLista = intLista.procurar(chave);
+            cout << "O valor do ponteiro e " << posLista << endl;
+            if (posLista != NULL)
+              cout << "O valor armazenado nessa posicao e " << posLista->getData() << endl;
+            else 
+              cout << "O ponteiro e NULL" << endl;
+            system("pause");
+            system("cls");
+            break;
+      case 3:
+            cout << "Print da Arvore em Pre ordem" << endl;
+            cout << "----------------------------" << endl;
+            intArvore.preOrdemPrint();
+            cout << endl;
+            system("pause");
+            system("cls");
+            break;
+      case 4:
+            cout << "Print da Arvore em ordem" << endl;
+            cout << "------------------------" << endl;
+            intArvore.emOrdemPrint();
+            cout << endl;
+            system("pause");
+            system("cls");
+            break;
+      case 5:
+            cout << "Print da Arvore em pos-ordem" << endl;
+            cout << "----------------------------" << endl;
+            intArvore.posOrdemPrint();
+            cout << endl;
+            system("pause");
+            system("cls");
+            break;
+      case 6:
+            cout << "Procurar um elemento na arvore" << endl;
+            cout << "------------------------------" << endl;
+            cout << "Entre com um elemento: ";
+            cin >> chave;
+            posArvore = intArvore.procurar(chave);
+            cout << "O valor do ponteiro e " << posArvore << endl;
+            if(posArvore != NULL)
+              cout << "O valor armazenado na posicao e " << posArvore->getData() << endl;
+            else
+              cout << "O valor e NULL" << endl;
+            system("pause");
+            system("cls");
+            break;
+      case 7:
+            cout << "Calcular o tamanho de determinado elemento" << endl;
+            cout << "------------------------------" << endl;
+            cout << "Entre com um elemento: ";
+            cin >> chave;
+            posArvore = intArvore.procurar(chave);
+            cout << "O tamanho do ponto e " << intArvore.tamanho(posArvore) << endl;
+            system("pause");
+            system("cls");
+            break;
+      case 8:
+            system("pause");
+            system("cls");
+
+    }
+
+  
+  }
+
+}
