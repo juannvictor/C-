@@ -1,0 +1,32 @@
+#ifndef LISTA_NODE_H
+#define LISTA_NODE_H
+
+template <typename T>
+class Lista;
+
+template <typename T>
+class ListaNode //Nós da lista
+{
+  friend class Lista<T>;
+public:
+      ListaNode(T);
+      T getData();
+private:
+      T data; //Data em template
+      ListaNode* proxPoint; //Ponteiro para o proximo nó da lista
+
+};
+
+template <typename T>
+ListaNode<T>::ListaNode(T dataIn)
+{
+  data = dataIn; //Armazenando os dados no nó
+  proxPoint = 0; //Inicializando como null
+}
+
+template <typename T>
+T ListaNode<T>::getData()
+{
+  return data;
+}
+#endif
